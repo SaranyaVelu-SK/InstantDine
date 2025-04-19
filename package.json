@@ -1,0 +1,25 @@
+{
+  "name": "bitenow",
+  "version": "1.0.0",
+  "description": "Food Delivery App",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "Food",
+    "delivery",
+    "App",
+    "ReactJS",
+    "Javascript"
+  ],
+  "author": "Saranya S K",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  }
+}
