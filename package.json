@@ -1,15 +1,13 @@
 {
-  "name": "bitenow",
+  "name": "instantdine",
   "version": "1.0.0",
   "description": "Food Delivery App",
-  "main": "index.js",
   "scripts": {
+    "start": "parcel index.html",
     "test": "jest"
   },
   "keywords": [
-    "Food",
-    "delivery",
-    "App",
+    "Food_Delivery_App",    
     "ReactJS",
     "Javascript"
   ],
