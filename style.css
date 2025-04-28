@@ -49,6 +49,7 @@
 .rest-card >div > p{
     margin-top: 1px;
     margin-bottom: 1px;
+    font-weight: bold;
 }
 
 .rest-logo{
@@ -61,4 +62,24 @@
 
 .rest-card:hover{
     transform: scale(0.9);
+    cursor: pointer;
+}
+
+.res-filter-btn{
+    margin:5px;
+    padding: 12px;
+    background-color: orangered;
+    color:white;
+    border:none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* .res-filter-btn:nth-of-type(1){
+    
+} */
+.body-sec1{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
 }

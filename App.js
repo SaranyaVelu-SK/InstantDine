@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./Components/Header";
-import Body from "./Components/Body";
+import Header from "./src/Components/Header";
+import Body from "./src/Components/Body";
 
 
 const something = React.createElement("p",{"color":"Blue"},"Something Rendered");

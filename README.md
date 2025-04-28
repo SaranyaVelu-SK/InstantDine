@@ -15,3 +15,5 @@ Sections :
         - Contact
 
 Created a reusable RestaurantCard component to display the restaurants in the main /home page - data fetched from swiggy API(foe learning purpose)
+
+
