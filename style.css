@@ -28,6 +28,15 @@
     font-size: 24px;
 }
 
+.nav-link-items{
+    text-decoration: none;
+    color:black;
+}
+
+.nav-link-items:hover{
+    color:seagreen;
+}
+
 #login-btn{
     border:none;
     background-color: orangered;
@@ -85,7 +94,7 @@
     color:white;
     border:none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
 }
 /* .res-filter-btn:nth-of-type(1){
@@ -130,4 +139,11 @@
 .about > p {
     font-size: 20px;
     color:dimgray
+}
+
+.res-main-page{
+    display:flex;
+    justify-self: center;
+    width:75%;
+    border:1px solid gray;
 }

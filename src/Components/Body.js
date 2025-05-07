@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import RestaurantCard from './RestaurantCard';
 import { useState, useEffect } from 'react';
 import BodyShimmer from './BodyShimmer';
+import { Link } from 'react-router-dom';
 
 
 const Body = () => {
@@ -55,7 +56,7 @@ const Body = () => {
                 {
                     finalizedRestaurants?.map(function (restaurant) {
                         return (
-                            <RestaurantCard restData={restaurant?.info} key={restaurant?.info?.id} />
+                            <Link to = {'/restaurant/'+restaurant?.info?.id} key={restaurant?.info?.id} ><RestaurantCard restData={restaurant?.info} /></Link>
                         )
                     })
                 }

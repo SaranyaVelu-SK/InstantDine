@@ -1,7 +1,6 @@
 import RestaurantShimmer from "./RestaurantShimmer";
 
 const BodyShimmer = () => {
-    console.log("heyyyyyyyyyyyyy")
     return (
         <div>
             <div style={{margin:"20px 7px",backgroundColor:"#f0f0f0",height:"100px",borderRadius:"10px"}}></div>
