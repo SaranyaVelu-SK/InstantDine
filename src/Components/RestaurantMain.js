@@ -1,29 +1,15 @@
-import { useEffect, useState } from "react";
-import { RESTAURANT_API } from "../../utils/constants";
 import { useParams } from "react-router-dom";
 import BodyShimmer from "./BodyShimmer";
+import useRestaurantData from "../../utils/useRestaurantData";
 
 const RestaurantMain = () => {
+
     const { resId } = useParams();
-    console.log(resId)
-
-
-    const [resData, setResData] = useState(null);
-
-    const fetchRestaurantData = async () => {
-        const data = await fetch(RESTAURANT_API + resId);
-        const jsonData = await data.json();
-        setResData(jsonData)
-
-    }
-
-    useEffect(() => {
-        fetchRestaurantData();
-    }, [])
-
+    const resData = useRestaurantData(resId);
     const resItemCards = resData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards;
     const resDetails = resData?.data?.cards[2]?.card?.card?.info;
     if (resData === null) return <BodyShimmer />
+
     return (
         <div className="res-main-page">
             <h1 >{resDetails.name}</h1>

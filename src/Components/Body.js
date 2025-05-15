@@ -3,6 +3,7 @@ import RestaurantCard from './RestaurantCard';
 import { useState, useEffect } from 'react';
 import BodyShimmer from './BodyShimmer';
 import { Link } from 'react-router-dom';
+import useOnlineStatus from '../../utils/useOnlineStatus';
 
 
 const Body = () => {
@@ -11,6 +12,7 @@ const Body = () => {
     const [isAllResClicked, setIsAllResClicked] = useState(true);
     const [searchKey, setSearchKey] = useState("");
     const [isSearched,setIsSearched] = useState(false);
+    const onlineStatus =useOnlineStatus();
 
     const fetchData = async() =>{
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.0168445&lng=76.9558321&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
@@ -36,6 +38,7 @@ const Body = () => {
     setIsSearched(true);
    }
 
+    if(!onlineStatus) return <h1 style ={{textAlign:"center"}}>Looking like you're Offline</h1>
     if(restaurants.length ===0){
         return <BodyShimmer/>
     }
@@ -56,7 +59,9 @@ const Body = () => {
                 {
                     finalizedRestaurants?.map(function (restaurant) {
                         return (
-                            <Link to = {'/restaurant/'+restaurant?.info?.id} key={restaurant?.info?.id} ><RestaurantCard restData={restaurant?.info} /></Link>
+                            <Link to = {'/restaurant/'+restaurant?.info?.id} key={restaurant?.info?.id} style={{ textDecoration: 'none', color: 'inherit' }} >
+                                <RestaurantCard restData={restaurant?.info} />
+                                </Link>
                         )
                     })
                 }
