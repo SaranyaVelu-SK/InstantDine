@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
+import userContext from "../../utils/userContext";
 
 const Header = () =>{
     const online = useOnlineStatus();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const userName = useContext(userContext);
     return (
         <div className="header">
             <div style={{
@@ -20,8 +23,10 @@ const Header = () =>{
                     <li><Link to ="/"  className="nav-link-items">Home</Link></li>
                     <li><Link to ="/about" className="nav-link-items">About us</Link> </li>
                     <li><Link to ="/contact" className="nav-link-items">Contact us</Link></li>
+                    <li><Link to ="/instantmart" className="nav-link-items ">Instant Mart</Link></li>
                     <li>Cart </li>
                     <button id="login-btn" onClick={()=>{isLoggedIn ? setIsLoggedIn(false) : setIsLoggedIn(true)}}>{isLoggedIn ? "Logout" : "Login"}</button>
+                    <li>{isLoggedIn ? userName?.loggedInUser : ""}</li>
                 </ul>
 
             </div>

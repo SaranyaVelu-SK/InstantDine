@@ -14,4 +14,22 @@ const RestaurantCard = (props) =>{
      )
 }
 
+export const EnhancedRestaurantCard = (Comp) =>{
+    return (
+        (props) => {
+            const offer = props?.restData?.aggregatedDiscountInfoV3;
+            if(offer){
+                return (
+                    <>
+                    <p className="resCard-offer">{`${offer?.header} - ${offer?.subHeader || offer?.discountTag}`}</p>
+                    <Comp {...props}/>
+                    </>
+                )
+            } 
+            return <Comp {...props} />
+            
+        }
+    )
+}
+
 export default RestaurantCard; 

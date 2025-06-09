@@ -1,22 +1,23 @@
 import UserClass from "./UserClass";
 import React from "react";
-
+import userContext from "../../utils/userContext";
 
 class ContactUs extends React.Component{
    constructor(props){
     super(props);
-    console.log('parent constructor')
    }
-   componentDidMount(){
-    console.log('parent mount')
-   }
+   
    render(){
-    console.log('parent render')
     return (
         <>
             <h1 style={{textAlign:"center",marginTop:"100px",color:"chocolate"}}>CONTACT US</h1>
+            <div style={{textAlign:"center"}}>
+                    <userContext.Consumer>
+                        {(data)=>data.loggedInUser}
+                    </userContext.Consumer>
+                </div>
             <div className="contact">
-
+                
 
                 <div>
                     <h2>Office Address  : </h2>

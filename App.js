@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./src/Components/Header";
 import Body from "./src/Components/Body";
@@ -7,18 +7,23 @@ import AboutUs from "./src/Components/AboutUs";
 import ContactUs from "./src/Components/ContactUs";
 import Error from "./src/Components/Error";
 import RestaurantMain from "./src/Components/RestaurantMain";
+import userContext from "./utils/userContext";
 
 
 const something = React.createElement("p",{"color":"Blue"},"Something Rendered");
 const AppLayout = () =>{
     return (
         <div>
-            <Header/>
+            <userContext.Provider value={{loggedInUser:"saranya"}}>
+                <Header/>
+            </userContext.Provider>
+            
             <Outlet />
-            {/* <Footer/> */}
         </div>
     )
 }
+
+const InstantMart = lazy(() => import('./src/Components/InstantMart'));
 
 const appRouter = createBrowserRouter(
     [
@@ -41,6 +46,10 @@ const appRouter = createBrowserRouter(
                 {
                     path:'/restaurant/:resId',
                     element:<RestaurantMain />
+                },
+                {
+                    path:'/instantmart',
+                    element:<Suspense fallback={<h1>just a minute..........</h1>}><InstantMart /></Suspense>
                 }
             ],
             errorElement: <Error />

@@ -59,6 +59,7 @@
 }
 
 .rest-card{
+    position:relative;
     padding:5px;
     background-color:white;
     width:300px;
@@ -82,7 +83,7 @@
     
 }
 
-.rest-card:hover{
+.rest-card:hover  {
     transform: scale(0.9);
     cursor: pointer;
 }
@@ -143,7 +144,62 @@
 
 .res-main-page{
     display:flex;
+    flex-direction: column;
     justify-self: center;
-    width:75%;
-    border:1px solid gray;
+    align-items: center;
+    width:100%;
+    background-color: orangered;
+    padding-left: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.res-main-page > div > p{
+    color:white;
+    margin-top: 1px;
+    font-weight: bold;
+}
+.resCard-offer{
+    position: absolute;
+    background-color: black;
+    color: white;
+    margin-left: 14px;
+    padding:10px;
+    border-radius: 7px;
+    z-index: 10; 
+}
+
+.item-card{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    justify-self: center;
+    box-shadow: 2px 3px 2px rgb(216, 215, 215);
+}
+.item-card-header{
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;    
+    padding:6px 10px;
+    background-color:rgb(255, 251, 251);
+}
+
+.itemCard-item{
+    border-bottom:1px solid rgb(219, 217, 217);
+ margin:14px;
+    padding:5px;
+    display:flex;
+    justify-content: space-between;
+    
+}
+
+.itemCard-item-description{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width:70%;
+}
+
+.itemCard-item-image{
+    width:max-content;
 }

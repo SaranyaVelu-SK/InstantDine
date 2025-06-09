@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import RestaurantCard from './RestaurantCard';
+import RestaurantCard , {EnhancedRestaurantCard} from './RestaurantCard';
 import { useState, useEffect } from 'react';
 import BodyShimmer from './BodyShimmer';
 import { Link } from 'react-router-dom';
@@ -42,6 +42,8 @@ const Body = () => {
     if(restaurants.length ===0){
         return <BodyShimmer/>
     }
+
+    const OfferedRestaurantcard = EnhancedRestaurantCard(RestaurantCard);
     return (
         <div className='body'>
             <div className='body-sec1'>
@@ -60,7 +62,7 @@ const Body = () => {
                     finalizedRestaurants?.map(function (restaurant) {
                         return (
                             <Link to = {'/restaurant/'+restaurant?.info?.id} key={restaurant?.info?.id} style={{ textDecoration: 'none', color: 'inherit' }} >
-                                <RestaurantCard restData={restaurant?.info} />
+                                <OfferedRestaurantcard restData={restaurant?.info} />
                                 </Link>
                         )
                     })
